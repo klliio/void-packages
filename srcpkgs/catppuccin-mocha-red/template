@@ -1,0 +1,15 @@
+# Template file for 'catppuccin-mocha-red'
+pkgname=catppuccin-mocha-red
+version=0.7.3
+revision=1
+short_desc="Soothing pastel theme for GTK "
+maintainer="klliio <111129234+klliio@users.noreply.github.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/catppuccin/gtk"
+distfiles="https://github.com/catppuccin/gtk/releases/download/v${version}/Catppuccin-Mocha-Standard-Red-Dark.zip"
+checksum=cd9674f4e73c0fd1d5a50a044db8643644d21ca8224ccf383684620c625a7721
+
+do_install() {
+	vmkdir usr/share/themes
+	vcopy Catppuccin-* usr/share/themes/
+}

@@ -1,0 +1,15 @@
+# Template file for 'catppuccin-mocha-sapphire'
+pkgname=catppuccin-mocha-sapphire
+version=0.7.3
+revision=1
+short_desc="Soothing pastel theme for GTK "
+maintainer="klliio <111129234+klliio@users.noreply.github.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/catppuccin/gtk"
+distfiles="https://github.com/catppuccin/gtk/releases/download/v${version}/Catppuccin-Mocha-Standard-Sapphire-Dark.zip"
+checksum=fa3b111886ecee1a7832f09e1555010ff3b10071e923a6c438dcc765df27f756
+
+do_install() {
+	vmkdir usr/share/themes
+	vcopy Catppuccin-* usr/share/themes/
+}

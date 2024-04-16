@@ -1,0 +1,15 @@
+# Template file for 'catppuccin-mocha-lavender'
+pkgname=catppuccin-mocha-lavender
+version=0.7.3
+revision=1
+short_desc="Soothing pastel theme for GTK "
+maintainer="klliio <111129234+klliio@users.noreply.github.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/catppuccin/gtk"
+distfiles="https://github.com/catppuccin/gtk/releases/download/v${version}/Catppuccin-Mocha-Standard-Lavender-Dark.zip"
+checksum=edff5a4be48886234712d4de80a449ded70979c322b1cf417c23127bd32c59fd
+
+do_install() {
+	vmkdir usr/share/themes
+	vcopy Catppuccin-* usr/share/themes/
+}

@@ -1,0 +1,16 @@
+# Template file for 'catppuccin-mocha-yellow'
+pkgname=catppuccin-mocha-yellow
+version=0.7.3
+revision=1
+short_desc="Soothing pastel theme for GTK "
+maintainer="klliio <111129234+klliio@users.noreply.github.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/catppuccin/gtk"
+distfiles="https://github.com/catppuccin/gtk/releases/download/v${version}/Catppuccin-Mocha-Standard-Yellow-Dark.zip"
+checksum=24cd2963517add8a6e17fc07626fac6af309d5a13f280f44c11b9a9ff268495b
+
+do_install() {
+	vmkdir usr/share/themes
+	vcopy Catppuccin-* usr/share/themes/
+}
+

@@ -1,0 +1,15 @@
+# Template file for 'catppuccin-mocha-pink'
+pkgname=catppuccin-mocha-pink
+version=0.7.3
+revision=1
+short_desc="Soothing pastel theme for GTK "
+maintainer="klliio <111129234+klliio@users.noreply.github.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/catppuccin/gtk"
+distfiles="https://github.com/catppuccin/gtk/releases/download/v${version}/Catppuccin-Mocha-Standard-Pink-Dark.zip"
+checksum=9310baa5aaf4d5b4a13517c7c57092907a9d2d8a842d82f5c161c74b7d014975
+
+do_install() {
+	vmkdir usr/share/themes
+	vcopy Catppuccin-* usr/share/themes/
+}
