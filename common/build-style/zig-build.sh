@@ -28,13 +28,15 @@ do_build() {
 	# directory and later copy the artifacts to the destdir in do_install().
 	# We use zig-out to avoid path conflicts as it is the default install
 	# prefix used by the zig build system.
-	DESTDIR="zig-out" zig build \
-		--sysroot "${XBPS_CROSS_BASE}" \
-		--libc xbps_zig_libc.txt \
-		-Dtarget="${zig_target}" -Dcpu="${zig_cpu}" \
-		-Drelease-safe --prefix /usr install \
-		${configure_args}
-}
+ 	DESTDIR="zig-out" zig build \
+ 		--sysroot "${XBPS_CROSS_BASE}" \
+		--search-prefix /usr \
+		--global-cache-dir /host/zig \
+ 		--libc xbps_zig_libc.txt \
+ 		-Dtarget="${zig_target}" -Dcpu="${zig_cpu}" \
+		--release=safe --prefix /usr install \
+ 		${configure_args}
+ }
 
 do_install() {
 	cp -r zig-out/* "${DESTDIR}"
